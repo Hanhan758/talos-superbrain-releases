@@ -2,7 +2,7 @@
 
 TALOS 超级大脑是一套面向个人知识管理的资料库框架，包含 Obsidian 控制台与本地资料整理工具。本仓库用于发布部署测试包。
 
-**当前版本：candidate.21 八插件测试版。** [下载部署包](https://github.com/Hanhan758/talos-superbrain-releases/releases/download/v0.4.0-candidate.21-dist.1/talos-superbrain-candidate21-eight-plugins.zip) · [版本说明与校验文件](https://github.com/Hanhan758/talos-superbrain-releases/releases/tag/v0.4.0-candidate.21-dist.1) · [新建资料库](#方式一新建空白资料库) · [接入已有资料库](#方式二接入已有资料库) · [首次使用](#首次打开与使用)
+**当前版本：candidate.22 八插件测试版。** [下载部署包](https://github.com/Hanhan758/talos-superbrain-releases/releases/download/v0.4.0-candidate.22-dist.1/talos-superbrain-candidate22-eight-plugins.zip) · [版本说明与校验文件](https://github.com/Hanhan758/talos-superbrain-releases/releases/tag/v0.4.0-candidate.22-dist.1) · [新建资料库](#方式一新建空白资料库) · [接入已有资料库](#方式二接入已有资料库) · [首次使用](#首次打开与使用)
 
 ![TALOS 系统体检：身份、灵魂与六器官](assets/screenshots/01-system-check.png)
 
@@ -11,22 +11,22 @@ TALOS 超级大脑是一套面向个人知识管理的资料库框架，包含 O
 ## 开始之前
 
 1. 准备一台 Mac，并安装 [Obsidian 桌面版](https://obsidian.md/download)。本包的安装脚本需要 **Python 3.9 或更新版本**；在“终端”输入 `python3 --version` 查看。如果没有可用的 Python，可从 [Python 官网](https://www.python.org/downloads/macos/)安装；安装后重新打开终端并再次检查。没有 Codex、Claude 或 API 密钥，也可以先建库和使用本地检索。
-2. 下载上面的 ZIP。请选择 `talos-superbrain-candidate21-eight-plugins.zip`，不要选择 GitHub 自动生成的 `Source code`。
-3. 双击 ZIP，保留解压后的整个 `talos-superbrain-0.4.0-candidate.21` 文件夹，不要只复制里面可见的几个文件：它也包含 `.agents`、`.claude`、`.obsidian` 等隐藏目录。**解压后的文件夹是安装源，新建出来的文件夹才是日常使用的资料库。**
+2. 下载上面的 ZIP。请选择 `talos-superbrain-candidate22-eight-plugins.zip`，不要选择 GitHub 自动生成的 `Source code`。
+3. 双击 ZIP，保留解压后的整个 `talos-superbrain-0.4.0-candidate.22` 文件夹，不要只复制里面可见的几个文件：它也包含 `.agents`、`.claude`、`.obsidian` 等隐藏目录。**解压后的文件夹是安装源，新建出来的文件夹才是日常使用的资料库。**
 4. 如果要接入已有资料，先保存并关闭旧库中的文档，再用 Finder 完整复制一份旧库作备份，包含隐藏的 `.obsidian`、附件和其他原文件。选择一个**尚不存在**、不在旧库或安装源里面的新目录作为目标；不要覆盖旧库。
 
 可选：在“终端”核对下载文件的 SHA-256。下面假设文件仍在“下载”目录；如果保存到了其他地方，请改为实际路径。
 
 ```sh
-shasum -a 256 "$HOME/Downloads/talos-superbrain-candidate21-eight-plugins.zip"
+shasum -a 256 "$HOME/Downloads/talos-superbrain-candidate22-eight-plugins.zip"
 ```
 
-结果应以 `ec6ff91b3dd4a348b47fe795e420cf6b68bad35bd4c906fd21f791b9f507aa6d` 开头，也可与 Release 中的 `SHA256SUMS.txt` 对照。
+结果应以 `21aa037b92db6828520ebde2fb75fa502dced7be85f3ae99c2325a2807b289a6` 开头，也可与 Release 中的 `SHA256SUMS.txt` 对照。
 
 ### 选择安装方式
 
 - **图形引导**：双击解压目录里的 `启动超级大脑.command`，按提示选择新建或接入。当前测试版的真实双击流程尚未单独验收；它会显示预览，确认后才写入。
-- **终端手动安装**：下面提供了逐步预览和执行命令。原九插件候选的这些核心流程在虚构库中验证过；八插件版已完成合成安装和健康检查，但尚未单独完成 Obsidian GUI 验收。
+- **终端手动安装**：下面提供了逐步预览和执行命令。本版已在合成资料中验证安装、接入和迁移；八插件版尚未单独完成 Obsidian GUI 验收。
 
 如果 macOS 阻止打开启动器，请先核对下载来源和文件完整性，再参考 [Apple 的安全打开说明](https://support.apple.com/zh-cn/102445)；也可以使用下方手动方式。不要关闭系统的全局安全保护。
 
@@ -44,7 +44,7 @@ shasum -a 256 "$HOME/Downloads/talos-superbrain-candidate21-eight-plugins.zip"
 以下假设 ZIP 解压到了“下载”目录，并希望把新库建在“文稿”目录。先打开“终端”，逐行运行；如果解压或目标位置不同，请先修改对应路径。
 
 ```sh
-TALOS_PACKAGE="$HOME/Downloads/talos-superbrain-0.4.0-candidate.21"
+TALOS_PACKAGE="$HOME/Downloads/talos-superbrain-0.4.0-candidate.22"
 TALOS_NEW="$HOME/Documents/TALOS-新资料库"
 python3 -B "$TALOS_PACKAGE/System/tools/deploy.py" install --source "$TALOS_PACKAGE" --target "$TALOS_NEW"
 ```
@@ -117,14 +117,14 @@ python3 -B "$TALOS_PACKAGE/System/tools/deploy.py" migrate --source "$TALOS_PACK
 python3 -B "$TALOS_PACKAGE/System/tools/deploy.py" migrate --source "$TALOS_PACKAGE" --from-vault "$TALOS_OLD" --target "$TALOS_NEW" --apply
 ```
 
-**同版本注意：**原九插件候选和本八插件分发包都显示 `candidate.21`。启动器遇到同版本 TALOS 库会直接打开它，不能视为自动升级或切换到八插件版。同版本迁移请使用新目标、保留完整旧库并逐项核对；该变体的此场景尚未单独完成 GUI 验收。
+**同版本注意：**原九插件候选与本八插件分发包都显示 `candidate.22`。启动器遇到同版本 TALOS 库会直接打开它，不能视为切换到八插件版。请使用新目标手动迁移、保留完整旧库并逐项核对；该变体的此场景尚未单独完成 GUI 验收。
 
 ## 首次打开与使用
 
 1. 在 Obsidian 的仓库选择界面选择“打开本地仓库”或“打开文件夹为仓库”，选中**刚建成的新库文件夹**。
 2. 首次打开时，按 Obsidian 提示确认是否信任仓库作者并启用第三方插件。需要时到“设置 → 社区插件”检查受限模式及 TALOS 的启用状态；只对你信任的来源启用插件。参见 [Obsidian 社区插件说明](https://help.obsidian.md/community-plugins)。
 3. 点击侧边栏的 TALOS 图标（提示为“打开 TALOS 控制台”），或打开命令面板搜索 **`TALOS: Open console`**。个人控制台默认提供首页、工作台、语音助手、系统总览和设置。身份、偏好和模型可以之后再配置。
-4. 本包内置 **TALOS 和八个第三方插件**；**Excalidraw 未内置**，可自行决定是否从 Obsidian 社区插件安装。包内旧版 `START-HERE.md` 的插件列表仍提到 Excalidraw，请以本页与包内 `DISTRIBUTION.md` 为准。
+4. 本包内置 **TALOS 和八个第三方插件**；**Excalidraw 未内置**，可自行决定是否从 Obsidian 社区插件安装。接入或迁移时，旧库中其他已有插件是否保留以接入报告为准；包内清单见 `DISTRIBUTION.md`。
 
 ### 第一次做一个本地检索
 
@@ -169,7 +169,7 @@ python3 -B "$TALOS_PACKAGE/System/tools/deploy.py" migrate --source "$TALOS_PACK
 
 ## 测试范围
 
-原 candidate.21 九插件候选曾在 macOS、Obsidian 1.15.0 中以虚构资料验证新建库、接入库、笔记计数、本地检索和打开资料。八插件分发版保留原包其余程序文件，已通过合成安装和健康检查；其 Obsidian GUI、真实双击启动器、真人完整流程和其他平台尚未单独验收。逐像素一致亦尚未证实。
+candidate.22 原候选已完成框架自动化回归及合成安装、升级检查；本八插件分发包在合成资料中另行验证了新建、接入与迁移，保留原库并核对插件清单。原 candidate.21 的 macOS Obsidian 局部 GUI 验证不能替代本版本；candidate.22 八插件版的 GUI、真实双击启动器、真人完整流程和其他平台尚未单独验收。逐像素一致亦尚未证实。
 
 ## 许可
 
