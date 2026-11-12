@@ -2,6 +2,26 @@
 
 TALOS 超级大脑是一套面向个人知识管理的资料库框架，包含 Obsidian 控制台与本地资料整理工具。本仓库用于发布部署测试包。
 
+## 真实界面截图
+
+以下是 Obsidian 中使用虚构测试资料的实际截图，展示不同页面和界面主题。截图用于展示界面；八插件分发版尚未单独完成 GUI 验收。
+
+### 系统体检
+
+![TALOS 系统体检：身份、灵魂与六器官](assets/screenshots/01-system-check.png)
+
+| 数据画像 | 系统总览 |
+| --- | --- |
+| ![数据画像和知识图谱](assets/screenshots/02-data-profile.png) | ![系统总览和资料统计](assets/screenshots/03-system-overview.png) |
+
+| 语音助手 | 资料工作台 |
+| --- | --- |
+| ![语音助手界面，麦克风关闭](assets/screenshots/04-voice-assistant.png) | ![工作台中的资料页面](assets/screenshots/05-materials-workbench.png) |
+
+| 项目与任务 | 系统与记忆 |
+| --- | --- |
+| ![工作台中的项目与任务](assets/screenshots/06-projects-tasks.png) | ![工作台中的系统与记忆](assets/screenshots/07-system-memory.png) |
+
 ## 下载测试版
 
 在 [Releases](../../releases) 下载 candidate.21 八插件分发测试包。下载 `talos-superbrain-candidate21-eight-plugins.zip`，不要使用 GitHub 自动生成的 Source code 归档。
